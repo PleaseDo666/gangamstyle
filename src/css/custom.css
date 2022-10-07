@@ -63,3 +63,65 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 .theme-edit-this-page {
   display: none;
 }
+
+.section-content {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  user-select: none;
+  transition: box-shadow .15s ease-out,transform .15s ease-out,opacity .15s ease-out;
+}
+
+.card-content .title {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -.5px;
+  color: var(--docs-color-text);
+}
+
+.card-content .description {
+  font-size: 14px;
+  letter-spacing: -.5px;
+  color: var(--docs-color-text);
+}
+
+.card-content {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.homepage-card {
+  --ifm-link-hover-color: inherit;
+  align-items: flex-start;
+  background-color: var(--docs-card-bg-c);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  color: var(--docs-color-text);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0.75rem;
+  transition: border-color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+.homepage-section {
+  margin-bottom: 24px;
+  margin-left: 2px;
+}
