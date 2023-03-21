@@ -15,7 +15,7 @@ export default function AccessControlSection({ title, className }) {
       <Card
         title="Lit Actions Conditions"
         description="Learn how to use Lit Actions for Access Control"
-        to="/coreConcepts/accessControl/conditionTypes/litActionConditions"
+        to="/accessControl/conditionTypes/litActionConditions"
       />
       <Card
         title="Gating Access Through JWT Auth"
