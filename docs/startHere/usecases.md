@@ -38,6 +38,7 @@ Using [HTML NFTs](/ToolsAndExamples/SDKExamples/HTMLNfts), you can create locked
 
 Here’s an [example](https://twitter.com/LitProtocol/status/1504630741849853954) using our Lit Genesis Canvas NFT. Only holders can access the private canvas site linked within!
 
+
 ## Programmatic Signing: Lit Actions and PKPs
 
 Introduce automation and interoperability to the dWeb with Lit Actions and PKPs. 
