@@ -59,15 +59,6 @@ html[data-theme="dark"] {
     no-repeat;
 }
 
-.category-not-collapsible {
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
-}
-
-.category-not-collapsible:last-of-type {
-  border: none;
-}
-
 .category-not-collapsible > .menu__list {
   padding-left: 0rem;
 }
@@ -78,6 +69,12 @@ html[data-theme="dark"] {
 
 .menu__list > .theme-doc-sidebar-item-category-level-1 {
   margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.menu__list > .theme-doc-sidebar-item-category-level-1:last-of-type {
+  border: none;
 }
 
 .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link {
