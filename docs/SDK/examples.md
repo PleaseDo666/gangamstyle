@@ -53,6 +53,12 @@ Below is a [Replit project](https://replit.com/@lit/NextJS-x-Lit-Token-Gating#pa
 
 <iframe frameborder="0" width="100%" height="500px" className="repls" style={{display: "none"}} src="https://replit.com/@lit/NextJS-x-Lit-Token-Gating#pages/index.js"></iframe>
 
+## Minting HTML NFTs
+
+An example that showcases the ability to mint an HTML NFT with locked content that only the NFT owner can decrypt or see.
+
+https://github.com/LIT-Protocol/MintLIT
+
 ## Using the Lit JS SDK entirely serverside
 
 This shows how to use the Lit JS SDK to provision access to a resource, and then request access to it, entirely on the server side.
