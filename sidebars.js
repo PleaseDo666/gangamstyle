@@ -117,16 +117,17 @@ const sidebars = {
     {
       type: 'category',
       label: 'SDK Reference',
-      collapsed: false,
+      collapsible: false,
+      className: 'category-not-collapsible',
       items: [
         'SDK/intro',
+        'SDK/Explanation/installation',
+        'SDK/Explanation/migration',
         {
           type: 'category',
           label: 'Working with the SDK',
           collapsed: true,
           items: [
-            'SDK/Explanation/installation',
-            'SDK/Explanation/migration',
             'SDK/Explanation/encryption',
             {
               type: 'category',
@@ -219,7 +220,7 @@ const sidebars = {
       className: 'category-not-collapsible',
       items: [
         'resources/howItWorks',
-        'resources/glossary',
+        
         'resources/contracts',
       ],
     },
@@ -229,10 +230,11 @@ const sidebars = {
       collapsible: false,
       className: 'category-not-collapsible',
       items: [
-        'Support/stateOfNetwork',
         'Support/faq',
+        'resources/glossary',
         'Support/bugBounty',
-        'Support/supportedChains',
+        'Support/stateOfNetwork',
+        
       ],
     },
   ]

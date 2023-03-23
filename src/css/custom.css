@@ -14,18 +14,24 @@
   --ifm-color-primary-lighter: #9e77f3;
   --ifm-color-primary-lightest: #bfa1ff;
   --ifm-navbar-item-padding-horizontal: 24px;
-  --ifm-heading-font-weight: 300;
+  --ifm-heading-font-weight: 400;
+  --ifm-footer-title-color: var(--ifm-color-emphasis-700);
+  --footer-border-color: transparent;
   --homepage-card-hover: #f8f8f8;
 }
 
 html[data-theme="dark"] {
-  --ifm-navbar-background-color: #190741;
-  --ifm-background-color: #190741;
+  --ifm-navbar-background-color: #111827;
+  --ifm-background-color: #111827;
+  --ifm-color-secondary-contrast-background: #1f2937;
+  --ifm-footer-background-color: var(--ifm-footer-background-color);
+  --ifm-menu-color: var(--ifm-color-emphasis-500);
+  --footer-border-color: var(--ifm-color-emphasis-200);
   --homepage-card-hover: var(--ifm-hover-overlay);
 }
 
 .navbar {
-  border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
 
 .header-github-link:hover {
@@ -50,6 +56,15 @@ html[data-theme="dark"] {
   padding-right: 0.5rem;
 }
 
+/* .category-not-collapsible {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.category-not-collapsible:last-of-type {
+  border: none;
+} */
+
 .category-not-collapsible > .menu__list {
   padding-left: 0rem;
 }
@@ -59,11 +74,19 @@ html[data-theme="dark"] {
 }
 
 .menu__list > .theme-doc-sidebar-item-category-level-1 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link {
-  color: var(--ifm-color-emphasis-900);
+  color: var(--ifm-color-emphasis-1000);
+}
+
+.footer {
+  border-top: 1px solid var(--footer-border-color);
+}
+
+.footer__title {
+  font-weight: 500;
 }
 
 .docusaurus-highlight-code-line {
@@ -158,10 +181,6 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 .homepage-section {
   margin-bottom: 24px;
   margin-left: 2px;
-}
-
-.footer {
-  --ifm-footer-color: rgba(235, 237, 240, 0.5);
 }
 
 @media only screen and (min-width: 996px) {
