@@ -7,6 +7,7 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #9e77f3;
+  --primary-hover-overlay: rgba(158, 119, 243, 0.1);
   --ifm-color-primary-dark: #8159d9;
   --ifm-color-primary-darker: #5e36b7;
   --ifm-color-primary-darkest: #2c0c72;
@@ -15,19 +16,25 @@
   --ifm-color-primary-lightest: #bfa1ff;
   --ifm-navbar-item-padding-horizontal: 24px;
   --ifm-heading-font-weight: 400;
+  /* --ifm-menu-color: var(--ifm-color-emphasis-700); */
+  --ifm-menu-color-background-active: var(--primary-hover-overlay);
+  --ifm-breadcrumb-item-background-active: var(--primary-hover-overlay);
   --ifm-footer-title-color: var(--ifm-color-emphasis-700);
+  --top-category-label-color: var(--ifm-color-emphasis-1000);
   --footer-border-color: transparent;
-  --homepage-card-hover: #f8f8f8;
+  --homepage-card-hover: rgba(191, 161, 255, 0.06);
 }
 
 html[data-theme="dark"] {
   --ifm-navbar-background-color: #111827;
   --ifm-background-color: #111827;
   --ifm-color-secondary-contrast-background: #1f2937;
+  --ifm-color-secondary-contrast-foreground: #cbd5e1; 
   --ifm-footer-background-color: var(--ifm-footer-background-color);
+  /* --top-category-label-color: var(--ifm-color-emphasis-400); */
   --ifm-menu-color: var(--ifm-color-emphasis-500);
   --footer-border-color: var(--ifm-color-emphasis-200);
-  --homepage-card-hover: var(--ifm-hover-overlay);
+  --homepage-card-hover: var(--primary-hover-overlay);
 }
 
 .navbar {
@@ -52,18 +59,14 @@ html[data-theme="dark"] {
     no-repeat;
 }
 
-.theme-doc-sidebar-menu {
-  padding-right: 0.5rem;
-}
-
-/* .category-not-collapsible {
+.category-not-collapsible {
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
 
 .category-not-collapsible:last-of-type {
   border: none;
-} */
+}
 
 .category-not-collapsible > .menu__list {
   padding-left: 0rem;
@@ -78,7 +81,10 @@ html[data-theme="dark"] {
 }
 
 .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible .menu__link {
-  color: var(--ifm-color-emphasis-1000);
+  color: var(--top-category-label-color);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .footer {
@@ -172,6 +178,7 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 .homepage-card:hover {
   text-decoration: none;
   background-color: var(--homepage-card-hover);
+  border-color: var(--ifm-color-primary-lightest);
 }
 
 .homepage-card:hover .card-content .title {
@@ -186,6 +193,10 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 @media only screen and (min-width: 996px) {
   :root {
     --ifm-spacing-horizontal: 1.5rem;
+  }
+
+  .theme-doc-sidebar-menu {
+    padding-right: 0.5rem;
   }
 
   .header-github-link {
