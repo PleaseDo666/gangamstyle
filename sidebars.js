@@ -31,7 +31,8 @@ const sidebars = {
     {
       type: 'category',
       label: 'Getting Started',
-      collapsed: false,
+      collapsible: false,
+      className: 'category-not-collapsible',
       items: [
         'startHere/overview',
         'startHere/whatIsLitProtocol',
@@ -203,7 +204,8 @@ const sidebars = {
     {
       type: 'category',
       label: 'Ecosystem',
-      collapsed: false,
+      collapsible: false,
+      className: 'category-not-collapsible',
       items: [
         'Ecosystem/litGrants',
         'Ecosystem/community',
@@ -213,7 +215,8 @@ const sidebars = {
     {
       type: 'category',
       label: 'Resources',
-      collapsed: false,
+      collapsible: false,
+      className: 'category-not-collapsible',
       items: [
         'resources/howItWorks',
         'resources/glossary',
@@ -223,7 +226,8 @@ const sidebars = {
     {
       type: 'category',
       label: 'Support',
-      collapsed: false,
+      collapsible: false,
+      className: 'category-not-collapsible',
       items: [
         'Support/stateOfNetwork',
         'Support/faq',
