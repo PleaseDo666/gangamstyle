@@ -28,6 +28,8 @@ You can mint an NFT from our PKP contract on Chronicle, Lit's custom EVM rollup 
 
 You can also use our handy auth helper contract on Chronicle [here](https://github.com/LIT-Protocol/LitNodeContracts/blob/main/contracts/PKPHelper.sol) and you can find the contract addresses [here](https://explorer.litprotocol.com/contracts)
 
+Read more [here](/pkp/minting).
+
 ## What blockchains can PKPs write to?​
 
 Any blockchain or cryptographic system that utilizes [ECDSA](https://blog.cloudflare.com/ecdsa-the-digital-signature-algorithm-of-a-better-internet/) for digital signatures. This includes Ethereum and most EVM chains, Bitcoin, and Cosmos. View all supported chains [here.](/resources/supportedChains#programmable-key-pairs)
