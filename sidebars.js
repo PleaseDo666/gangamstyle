@@ -85,6 +85,7 @@ const sidebars = {
       collapsed: true,
       items: [
         'pkp/intro',
+        'pkp/minting',
         'pkp/authHelpers',
         {
           type: 'category',
@@ -151,11 +152,16 @@ const sidebars = {
             'SDK/Explanation/encryption',
             {
               type: 'category',
-              label: 'Wallet Signatures and Session Keys',
+              label: 'Authentication',
+              link: {
+                type: 'doc',
+                id: 'SDK/Explanation/authentication/overview',
+              },
               collapsed: true,
               items: [
-                'SDK/Explanation/WalletSigs/authSig',
-                'SDK/Explanation/WalletSigs/sessionSigs',
+                'SDK/Explanation/authentication/authSig',
+                'SDK/Explanation/authentication/sessionSigs',
+                'SDK/Explanation/authentication/methods',
               ],
             },
             'SDK/Explanation/tests'
