@@ -11,7 +11,7 @@ export default function AddRollupButton() {
           symbol: "LIT",
           decimals: 18,
         },
-        rpcUrls: ["rpcUrlGoesHere"],
+        rpcUrls: ["https://chain-rpc.litprotocol.com"],
         blockExplorerUrls: ["https://chain.litprotocol.com"],
       },
     ];
