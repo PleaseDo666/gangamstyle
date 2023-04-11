@@ -161,7 +161,7 @@ const sidebars = {
               items: [
                 'SDK/Explanation/authentication/authSig',
                 'SDK/Explanation/authentication/sessionSigs',
-                'SDK/Explanation/authentication/methods',
+                // 'SDK/Explanation/authentication/methods',
               ],
             },
             'SDK/Explanation/tests'
