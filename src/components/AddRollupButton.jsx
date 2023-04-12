@@ -5,13 +5,13 @@ export default function AddRollupButton() {
     const params = [
       {
         chainId: "0x2AC49",
-        chainName: "Chronicle - Lit Protocol",
+        chainName: "Chronicle - Lit Protocol Testnet",
         nativeCurrency: {
           name: "LIT",
           symbol: "LIT",
           decimals: 18,
         },
-        rpcUrls: ["https://chain-rpc.litprotocol.com"],
+        rpcUrls: ["https://chain-rpc.litprotocol.com/http"],
         blockExplorerUrls: ["https://chain.litprotocol.com"],
       },
     ];
