@@ -36,9 +36,22 @@ const sidebars = {
       items: ["intro/overview", "intro/whatIsLitProtocol", "intro/usecases"],
     },
     {
+      type: 'category',
+      label: 'Authentication',
+      collapsible: false,
+      className: "category-not-collapsible",
+      items: [
+        'authentication/overview',
+        'authentication/authSig',
+        'authentication/sessionSigs',
+        'authentication/methods',
+      ],
+    },
+    {
       type: "category",
       label: "Access Control",
-      collapsed: true,
+      collapsible: false,
+      className: "category-not-collapsible",
       items: [
         "accessControl/intro",
         {
@@ -78,7 +91,8 @@ const sidebars = {
     {
       type: "category",
       label: "Programmable Key Pairs",
-      collapsed: true,
+      collapsible: false,
+      className: "category-not-collapsible",
       items: [
         'pkp/intro',
         'pkp/minting',
@@ -100,7 +114,8 @@ const sidebars = {
     {
       type: "category",
       label: "Lit Actions",
-      collapsed: true,
+      collapsible: false,
+      className: "category-not-collapsible",
       items: [
         "LitActions/intro",
         "LitActions/getlitCli",
@@ -131,7 +146,6 @@ const sidebars = {
         },
       ],
     },
-
     {
       type: "category",
       label: "SDK Reference",
@@ -147,20 +161,6 @@ const sidebars = {
           collapsed: true,
           items: [
             "SDK/Explanation/encryption",
-            {
-              type: 'category',
-              label: 'Authentication',
-              link: {
-                type: 'doc',
-                id: 'SDK/Explanation/authentication/overview',
-              },
-              collapsed: true,
-              items: [
-                'SDK/Explanation/authentication/authSig',
-                'SDK/Explanation/authentication/sessionSigs',
-                // 'SDK/Explanation/authentication/methods',
-              ],
-            },
             "SDK/Explanation/tests",
           ],
         },
