@@ -11,7 +11,7 @@ An auth signature, also referred to as `AuthSig`, is a signature that proves you
 - Google OAuth
 - Discord OAuth
 - WebAuthn Authentication
-
+- SMS / Email Verification (OTP)
 <br/>
 
 ## Generate `SessionSigs`
