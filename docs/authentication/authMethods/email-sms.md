@@ -1,6 +1,6 @@
 # SMS / Email Verification
 
-SMS / Email verification is supported as an `Authentication Method` for obtaining either an `Auth Signature` or `Session Signature`.
+SMS / Email verification is supported as an `Authentication Method` for obtaining either an [Auth Signature](../authSig.md) or [Session Signature](../sessionSigs/getSessionSigs.md).
 
 In order to use otp verification you must have an `access token` which you can get here. Access Tokens must be provided to the `lit-auth-client` when using this `Authentication Method` type.
 
@@ -11,5 +11,4 @@ Through the `lit-auth-client` verification codes are able to be sent, and confir
 - Using the `contract-sdk`
 - Interface with our `Relay Server`
 
-The Lit Relay server is able to verify generated tokens to either mint a new Key Pair, or query existing key pairs associated with a given `user id` handling gas fees, and contract interfacing for you, behind a consumable rest  API. for access to our Relayer, see here.
-
+The Lit Relay server is able to verify generated tokens to either mint a new Key Pair, or query existing key pairs associated with a given `user id` handling gas fees, and contract interfacing for you, behind a consumable rest API.
