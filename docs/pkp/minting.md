@@ -20,6 +20,12 @@ We have a frontend that helps with this process at https://pkp-walletconnect.ver
 
 We currently support both username-based and username-less WebAuthn registration, and usernames are purely used for your convenience / reference on the client-side.
 
+
+## Mint via Sms/Emaul (OTP)
+
+You can mint a PKP by presenting a generated token from sucessful OTP code confirmation, this will be returned by the `lit-auth-client` in the `AuthMethod` return from successful code confirmation.
+Read more [here](/docs/authentication/authMethods/email-sms.md).
+See example [here](/docs/authentication/authMethods/examples.md).
 ## Technical Details
 
 ### Contract Specifics
