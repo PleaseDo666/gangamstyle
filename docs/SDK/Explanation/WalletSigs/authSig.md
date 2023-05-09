@@ -97,3 +97,62 @@ Below is the complete [**React** project](https://replit.com/@lit/Smart-Contract
 ## Clearing the stored AuthSig
 
 If you want to clear the authSig stored in the browser local storage, you can call the [`disconnectWeb3` method](https://js-sdk.litprotocol.com/functions/auth_browser_src.ethConnect.disconnectWeb3.html).
+
+## What happens to the Authsig submitted to the Lit nodes?
+
+When you submit the `authSig` for retrieving the `symmetricKey` using the function `getEncryptionKey` the nodes verify the `authSig` based on the `accessControlConditions` passed along with it:
+
+### accessControlConditions
+
+1. We extract the Ethereum authSig from the passed `authSig` argument since it may contain multiple authSigs.
+2. If its a non EIP-1271 authSig:
+	1. We verify whether the signature for the `authSig.signedMessage` was produced by `authSig.address`.
+	2. If the `authSig.signedMessage` starts with "I am creating an account to use" then check that it contains a timestamp.
+	3. Otherwise, we parse it as a SIWE message. We convert the `authSig.sig` into a fixed length of bytes & validate its time constraints. This returns a compressed pubkey. Finally, the authSig is valid if the `authSig.address` equals the keccak256 hash of the pubkey.
+3. If its an EIP-1271 authSig:
+	1. We get the corresponding web3 provider RPC for the passed chain argument.
+	2. Make an EIP-1559 transaction to the `authSig.address` along with the encoded `authSig.signedMessage` & `authSig.sig` as the data.
+	3. And return the result of `isValidSignature` function as explained in the above section.
+4. Finally, we check whether the result of 2/3 satisfies the given `accessControlConditions` argument. We do this by recursively making RPC chain calls for each condition and comparing their return value against the `returnValueTest.value`.
+	1. Eg: Querying the `accessControlConditions.chain` for the ERC721 owner & comparing the result against the `returnValueTest.value` which may `:userAddress` or a specific wallet address.
+5. We then return the combined results of all these comparision as per the accessControlConditions' boolean logic.
+
+### evmContractConditions
+
+1. We extract & validate the Ethereum authSig from the passed `authSig` argument just as above (1 - 3).
+2. Match the number of parameters of the function's abi with the input parameters.
+3. Substitute specials parameters with their actual values. Eg: `:userAddress` with the actual user's address.
+4. Tokenize the input parameters & query the given `address` on the provided `chain`.
+5. Parse the returned value against the `returnValueTest` object & return if its matched.
+
+### solRpcConditions
+
+1. We extract the Solana authSig from the passed `authSig` argument since it may contain multiple authSigs.
+2. Get the ED-25519 public key from the `authSig.address` & use it to verify `authSig.sig` on `authSig.message`.
+3. For each condition, first substitute the special params with their actual values & check if PDA is needed.
+4. If so, we extract the program address from the `pdaParams` & use it to find a valid PDA and the corresponding bump seed.
+5. We then make a Solana RPC call to `getAccountInfo` & parse its response using the `offset` & `fields` values provided in `pdaInterface`. We also ensure that the `pdaInterface.fields` contain the provided `pdaKey`.
+6. Finally, we make another Solana RPC call for the given `method` & compare its result with the `returnValueTest.value`.
+
+### unifiedAccessControlCondition
+
+1. We start by extracting all the authSig items from the provided `authSig`. At least one of the following should be present:
+	1. Ethereum
+	2. Solana
+	3. Cosmos
+	4. Juno
+	5. Kyve
+	6. Cheqd
+2. If algo is specified then it should only be be ED-25518.
+3. Based on the provided `chain` we verify the above authSig items.
+	1. Solana: As described in points [1 - 2](#solRpcConditions)
+	2. Ethereum: As described in points [1 - 3](#accessControlConditions)
+	3. Else for the chains- "cosmos", "kyve", "cheqd" & "juno" we validate the Cosmos authSig as follows:
+		1. We start by extracting the `sig` & `signedMessage` from the given `authSig`.
+		2. And check for all 4 recovery ids for Cosmos since it chops off the last byte of the V param in `sig`.
+		3. Recover the `pubKey` from the above extracted `sig`, `signedMessage` & `recoveryId` (one from the above).
+		4. We derive the Cosmos address by first taking the SHA256 hash of the `pubKey` & then taking the ripemd160 hash of it. Prefixing "cosmos" & followed by its bech32 encoding.
+		5. Finally, return true if the `authSig.address` matches the above derived address.
+4. Then for each control conditions we check whether the `authSig` satisfies the provided condition.
+	1. For example, if the `authSig` corresponds to Ethereum then we validate the condition as explained in the [evmContractConditions](#evmContractConditions) section. Similarly for Solana as well.
+	2. For Cosmos, we start by substituting the special params by their actual values, eg: `:userAddress`. Then call the Cosmos RPC endpoint & compare it result with the `returnValueTest.value`.
