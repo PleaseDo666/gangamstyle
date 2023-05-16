@@ -1683,7 +1683,7 @@
 
 "@lit-protocol/constants@^2.1.161":
   version "2.1.161"
-  resolved "https://registry.npmjs.org/@lit-protocol/constants/-/constants-2.1.161.tgz#d25b55199e7f624f7e762cd78e59a207c8510335"
+  resolved "https://registry.yarnpkg.com/@lit-protocol/constants/-/constants-2.1.161.tgz#d25b55199e7f624f7e762cd78e59a207c8510335"
   integrity sha512-91Rs01/BmRdi7YYmwqkaqI7TYOxhldpLIf5nLBaAQNZloijdF073KbXa9dFZtVbTo3c8fG5O6ts6DOQLK7mSKA==
   dependencies:
     "@lit-protocol/types" "2.1.161"
