@@ -7,7 +7,7 @@ sidebar_position: 1
 :::note
 PKPs are still heavily in development and things may change. We're grateful for [feedback](https://forms.gle/4UJNRcQspZyvsTHt8) on how to improve the docs and examples!
 
-Need some Lit Test Tokens to mint a PKP on Chronicle? Fill out this [form](https://forms.gle/hcvh7VbS83DokBSE9)
+Need some `LIT` test tokens to mint a PKP on Chronicle? Use the faucet: https://faucet.litprotocol.com/
 
 **PKP Developer Preview is Live!**
 Get a PKP on the [PKP Explorer](https://explorer.litprotocol.com/mint-pkp)
@@ -23,6 +23,8 @@ Each PKP is an ECDSA key-pair generated collectively by the Lit nodes through a 
 It’s important to note: only those with authorized access have the ability to request a signature or allow some signing logic to be run. Authorized access refers to the particular "authentication method" used to generate the PKP in the first place, such as a wallet signature or oAuth token. More on this below.
 
 ## How do I create a PKP?
+
+Read more [here](/pkp/minting).
 
 Read more [here](/pkp/minting).
 

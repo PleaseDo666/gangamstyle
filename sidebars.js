@@ -33,7 +33,12 @@ const sidebars = {
       label: "Getting Started",
       collapsible: false,
       className: "category-not-collapsible",
-      items: ["intro/overview", "intro/whatIsLitProtocol", "intro/usecases"],
+      items: [
+        "intro/overview",
+        "intro/whatIsLitProtocol",
+        "intro/usecases",
+        "intro/rollup",
+      ],
     },
     {
       type: 'category',
@@ -94,9 +99,9 @@ const sidebars = {
       collapsible: false,
       className: "category-not-collapsible",
       items: [
-        'pkp/intro',
-        'pkp/minting',
-        'pkp/authHelpers',
+        "pkp/intro",
+        "pkp/minting",
+        "pkp/authHelpers",
         {
           type: "category",
           label: "Distributed Cloud Wallets",
@@ -108,7 +113,6 @@ const sidebars = {
           ],
         },
         "pkp/toolsAndExamples",
-        "pkp/rollup",
       ],
     },
     {
@@ -161,6 +165,48 @@ const sidebars = {
           collapsed: true,
           items: [
             "SDK/Explanation/encryption",
+            {
+              type: "category",
+              label: "Authentication",
+              link: {
+                type: "doc",
+                id: "SDK/Explanation/authentication/overview",
+              },
+              collapsed: true,
+              items: [
+                "SDK/Explanation/authentication/authSig",
+                {
+                  type: "category",
+                  label: "Session Signatures",
+                  link: {
+                    type: "doc",
+                    id: "SDK/Explanation/authentication/sessionSigs/intro",
+                  },
+                  collapsed: true,
+                  items: [
+                    "SDK/Explanation/authentication/sessionSigs/resources-and-abilities",
+                    "SDK/Explanation/authentication/sessionSigs/capability-objects",
+                    "SDK/Explanation/authentication/sessionSigs/getSessionSigs",
+                    "SDK/Explanation/authentication/sessionSigs/usage",
+                    {
+                      type: "category",
+                      label: "Walletless Signatures",
+                      link: {
+                        type: "doc",
+                        id: "SDK/Explanation/authentication/sessionSigs/authMethods/overview",
+                      },
+                      collapsed: true,
+                      items: [
+                        "SDK/Explanation/authentication/sessionSigs/authMethods/socialLogin",
+                        "SDK/Explanation/authentication/sessionSigs/authMethods/webAuthn",
+                      ],
+                    },
+                    // "SDK/Explanation/authentication/sessionSigs/use-cases",
+                  ],
+                },
+                "SDK/Explanation/authentication/security",
+              ],
+            },
             "SDK/Explanation/tests",
           ],
         },

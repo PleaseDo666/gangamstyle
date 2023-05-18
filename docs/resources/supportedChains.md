@@ -15,11 +15,8 @@ Don't see a blockchain you want?  Fill out this form for EVM chains and we'll ad
 - avalanche
 - fuji
 - harmony
-- kovan
 - mumbai
 - goerli
-- ropsten
-- rinkeby
 - cronos
 - optimism
 - celo
@@ -38,6 +35,7 @@ Don't see a blockchain you want?  Fill out this form for EVM chains and we'll ad
 - hyperspace
 - scrollAlphaTestnet
 - zksync
+- litprotocol
 - solana
 - solanaDevnet
 - solanaTestnet
@@ -45,7 +43,8 @@ Don't see a blockchain you want?  Fill out this form for EVM chains and we'll ad
 - kyve
 - evmosCosmos
 - evmosCosmosTestnet
-- cheqd
+- cheqdMainnet
+- cheqdTestnet
 - juno
 
 
