@@ -48,8 +48,6 @@ const sidebars = {
       items: [
         'authentication/overview',
         'authentication/authSig',
-        'authentication/sessionSigs',
-        'authentication/methods',
       ],
     },
     {
@@ -199,6 +197,7 @@ const sidebars = {
                       items: [
                         "SDK/Explanation/authentication/sessionSigs/authMethods/socialLogin",
                         "SDK/Explanation/authentication/sessionSigs/authMethods/webAuthn",
+                        "SDK/Explanation/authentication/sessionSigs/authMethods/email-sms",
                       ],
                     },
                     // "SDK/Explanation/authentication/sessionSigs/use-cases",
