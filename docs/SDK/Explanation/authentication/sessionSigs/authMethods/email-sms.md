@@ -1,7 +1,10 @@
 # Email / SMS
 
-When authenticating with email or sms provided otp codes, it is a two step process. First initating a code be sent to a email / phone number, then asserting on the user provided code which will generated a signed Json Web Token if successful. This token will be validated getting a signed Session Signature as the `accessToken` within the returned `Auth Method`.
+When authenticating with email or sms provided otp codes, it is a two step process. First initating a code be sent to a email / phone number, then asserting on the user provided code which will generated a signed Json Web Token if successful. This token will be validated when signing Session Signatures as the `accessToken` within the returned `Auth Method`.
 
+:::note
+Codes sent to users via email will be recieved from `noreply@litprotocol.com`. Codes sent to users via sms will include `lit-verification` within the sms message.
+:::
 ### Register user with sms / email auth
 
 ```javascript
@@ -32,7 +35,7 @@ If you are using Lit Relay Server, you will need to request an API key [here](ht
 
 ### Minting via Contract
 
-An alternative to minting the PKP NFT via the Lit Relay Server is to send a transaction to the smart contract yourself. To do this for WebAuthn credentials, you can reference the following example data that is passed to the `mintNextAndAddAuthMethods` method of the `PKPHelper` smart contract:
+An alternative to minting the PKP NFT via the Lit Relay Server is to send a transaction to the smart contract yourself. You can reference the following example data that is passed to the `mintNextAndAddAuthMethods` method of the `PKPHelper` smart contract:
 
 - `keyType` is `2`
 - `permittedAuthMethodTypes` is `[7]`
@@ -69,7 +72,7 @@ If the user is using a phone number, the country code must be provided.
 
 ## Generating `SessionSigs`
 
-After successfully authenticating with an OTP Json Web Token, you can generate `SessionSigs` using the provider's `getSessionSigs` method. The `getSessionSigs` method takes in an `AuthMethod` object, a PKP public key, and other session-specific arguments such as `resourceAbilityRequests` and returns a `SessionSig` object.
+After successfully authenticating with an `AuthMethod`, you can generate `Session Signatures` using the provider's `getSessionSigs` method. The `getSessionSigs` method takes in an `AuthMethod` object, a PKP public key, and other session-specific arguments such as `resourceAbilityRequests` and returns a `SessionSig` object.
 
 ```javascript
 // Get session signatures for the given PKP public key and auth method
