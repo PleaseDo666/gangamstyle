@@ -16,7 +16,7 @@ const authClient = new LitAuthClient({
 
 // starting a validation session
 let session = authClient.initProvider(ProviderType.Otp,{
-            userId: 'email or phone numner' 
+            userId: 'email or phone number' 
 });
 
 let status = await session.sendOtpCode();
