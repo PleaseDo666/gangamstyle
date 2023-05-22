@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Lit Protocol Developer Docs",
+  title: "Lit Protocol",
   tagline: "Blockchain based access control for the web",
   url: "https://developer.litprotocol.com",
   baseUrl: "/",
@@ -48,7 +48,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "Lit Protocol Developer Docs",
+        title: "Lit Protocol",
         logo: {
           alt: "Lit Protocol",
           src: "img/logo.svg",

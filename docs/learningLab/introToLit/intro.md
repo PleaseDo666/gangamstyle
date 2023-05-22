@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 
 # 1. Intro
-At its core, Lit is an attempt to decentralize [public key cryptography](https://www.cloudflare.com/learning/ssl/how-does-public-key-encryption-work/). This technology underpins all of cryptocurrency and most of the security infrastructure on the web today.
+At its core, Lit is an attempt to decentralize [public key cryptography](https://www.cloudflare.com/learning/ssl/how-does-public-key-encryption-work/). This technology underpins all of cryptocurrency and a majority of the security infrastructure on the web today. A decentralized key management network, Lit can be used in place of centralized key custodians and other key management solutions
 
 Public key infrastructure (PKI) powers two main "buckets" of functionality: encryption and signing.
 

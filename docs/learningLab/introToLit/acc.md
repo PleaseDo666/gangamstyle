@@ -1,10 +1,22 @@
 ---
 sidebar_position: 3
 ---
-# 3. Working with Access Control Conditions 
-ACCs can be harnessed to restrict access to a particular resource (such as a file, webpage, or server). You can set an on-chain condition(s) and then the network will provision signatures and decryption keys for users that meet those conditions.
+# 3. Access Control 
+![image](../../../static/img/ll_acc.png)
 
-### **Example Conditions**
+Access control control conditions can be used to restrict access to a particular resource (such as a file, webpage, or server). You can set an on-chain conditions and then the network will provision signatures and decryption keys for users that meet those conditions.
+
+---
+
+## Objectives
+At completion of this reading you should be able to:
+
+- Describe what access control conditions are useful for.
+- List common types of applications that can be developed with access control.
+
+---
+
+## **Example Conditions**
 
 - User is a member of a DAO
 - User holds an NFT in a collection
@@ -21,7 +33,7 @@ ACCs can be harnessed to restrict access to a particular resource (such as a fil
 - *Updateable conditions*: Only the creator can update the condition.
 - *Permanent conditions*: When a condition is stored as permanent, it becomes impossible to update it, forever.
 
-### **Basic Example**
+## **Basic Example**
 
 Restrict access based on the possession of an ERC1155 token. In this example, the token contract's address is 0x3110c39b428221012934A7F617913b095BC1078C and the token id we are checking for is 9541.
 
@@ -44,4 +56,29 @@ const accessControlConditions = [
 ]
 ```
 
-To learn more and get started as a developer in the Lit Eco, head on over to our [protocol documentation](https://developer.litprotocol.com/coreConcepts/accessControl/conditionTypes/unifiedAccessControlConditions).
+To learn more and get started as a developer in the Lit ecosystem, head on over to the [protocol documentation](https://developer.litprotocol.com/coreConcepts/accessControl/conditionTypes/unifiedAccessControlConditions).
+
+## Use Cases
+
+With access control, you can introduce private and permissioned data to the open web using decentralized encryption. Use Lit to provision decryption "keys" to users based on on-chain conditions, such as ownership over a specific NFT or membership within a DAO.
+
+Some examples of applications that can (and have) been built harnessing this functionality:
+
+**Web3 Apps with Private Data**
+
+Introduce privacy to decentralized applications. Use Lit to securely store private and permissioned data on the open web. To get started with an integration, use our JavaScript [SDK](https://developer.litprotocol.com/SDK/intro).
+
+Examples:
+
+- [Orbis Club](https://orbis.club/): Enabling “friends-only” content and encrypted messaging.
+- [Lens](https://docs.lens.xyz/docs/gated): Permissioned data for web3 social.
+- [Streamr](https://blog.streamr.network/streamr-integrates-lit-protocol/): Private data marketplaces.
+- [Gather](https://www.gather.town/): Powering private virtual spaces for your team.
+
+**Add Token Gating to Web2 Apps**
+
+Use on-chain credentials to gate access to your favorite web2 applications and data.
+
+- [Zoom](https://litgateway.com/apps/zoom): Token-gated Zoom calls.
+- [Google Drive](https://litgateway.com/apps/google-drive): Add access control requirements to your Google Drive files.
+- [WordPress](https://litgateway.com/apps/wordpress): Gate access to WordPress sites and pages.
