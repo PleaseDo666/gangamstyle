@@ -41,16 +41,6 @@ const sidebars = {
       ],
     },
     {
-      type: 'category',
-      label: 'Authentication',
-      collapsible: false,
-      className: "category-not-collapsible",
-      items: [
-        'authentication/overview',
-        'authentication/authSig',
-      ],
-    },
-    {
       type: "category",
       label: "Access Control",
       collapsible: false,

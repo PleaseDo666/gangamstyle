@@ -14,7 +14,7 @@ Read more about this process [here](/pkp/wallets/examples).
 
 ## Mint via SMS / Email (OTP)
 
-You can mint a PKP by presenting a generated token from sucessful OTP code confirmation, this will be returned by the `lit-auth-client` in the `AuthMethod` return from successful code confirmation.
+You can mint a PKP by presenting a generated token from sucessful OTP code confirmation, which will be returned by the `lit-auth-client` in the `AuthMethod` return from successful code confirmation.
 Read more [here](/docs/authentication/authMethods/email-sms.md).
 See example [here](/docs/authentication/authMethods/examples.md).
 
