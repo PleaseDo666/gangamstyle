@@ -12,4 +12,4 @@ Whether you're a curious beginner or an experienced professional aiming to stay 
 
 You can commence your learning journey by starting with the fundamentals and progressively advancing, or you can directly explore the more complex concepts, pushing the boundaries of your understanding to reach new heights.
 
-Embark on your threshold cryptography adventure today!
+Embark on your Lit adventure today!

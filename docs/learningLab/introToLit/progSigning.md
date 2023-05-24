@@ -17,11 +17,32 @@ At completion of this reading you should be able to:
 
 ---
 
-## Lit Actions and Programmable Key Pairs (PKPs)
+## Programmable Key Pairs
+
+Each Programmable Key Pair (PKP) is a versatile multi-party computation wallet that can be utilized by developers to:
+
+- Provide users of web3 with seamless, "seed-phraseless" onboarding experiences.
+- Facilitate transaction execution on blockchains, storage networks, and other state machines.
+- Build fully decentralized application backends.
+
+**Features**
+1. [Blockchain Agnostic](/resources/supportedChains#programmable-key-pairs): PKPs can be used to sign transactions on any blockchains or state machines using [ECDSA](https://blog.cloudflare.com/ecdsa-the-digital-signature-algorithm-of-a-better-internet/) for digital signatures. Currently, the [SDK](https://github.com/LIT-Protocol/js-sdk/tree/master/packages/pkp-client) provides easy-to-use methods for creating wallets on EVM and Cosmos based chains. 
+2. Programmable: [Lit Actions](/LitActions/intro) contain the application logic that each PKP should follow. This is useful for defining [signing automations](/automated-portfolio-rebalancing-uniswap/), handling [authentication](/pkp/authHelpers#example-setting-auth-context-with-lit-actions), or generating [conditional proofs](/LitActions/workingWithActions/conditionalSigning).  
+3. Fault-tolerant: Each PKP is generated collectively by the Lit nodes through a process called [Distributed Key Generation](https://en.wikipedia.org/wiki/Distributed_key_generation) (DKG). As a network, this allows Lit to generate a new key-pair where the private key never exists in its entirety. 
+4. Interoperable: Use [WalletConnect](https://github.com/LIT-Protocol/pkp-walletconnect) to connect PKPs to your favorite dApps, just like any other EOA wallet.
+
+
+## Lit Actions
 Lit Actions are JavaScript programs that can be used to specify signing and authentication logic for PKPs. When used in conjunction with PKPs, Lit Actions are functionally serverless functions with their own private key-pair. Together these tools can be used to write data to blockchains and other state machines.
 
 Every Lit Action gets executed across Lit’s threshold cryptography network in parallel, meaning the result of each program is independently verified by each node. Once a threshold of nodes have verified the result (more than two-thirds of network participants), the signing or decryption logic defined therein can be executed.
 
+**Features**
+
+1. [Blockchain Agnostic](/resources/supportedChains#programmable-key-pairs): Lit Actions can be used to write data to blockchains using PKPs
+2. Immutable: Once a Lit Action has been published, it cannot be modified
+3. Atomicity: Using [Mint/Grant/Burn](/LitActions/usingPKPsAndActions#what-is-mintgrantburn), you can atomically link a PKP to an authorized set of Lit Actions. This method guarantees that a particular PKP can only ever be used to sign data from within the approved set
+4. Off-Chain Compatibility: Lit Actions can pull in data from [off-chain sources](/LitActions/workingWithActions/usingFetch) natively, without requiring the use of a third party oracle
 
 ## How do Lit Actions and PKPs work together?
 A user can create a new PKP and grant a Lit Action the right to sign using it. This means the distributed key has the ability to sign and decrypt arbitrary data based on pre-defined logic and conditions.
@@ -35,18 +56,64 @@ With Lit and web3 storage like Ceramic, you can empower Lit Actions to assume an
 
 This seamless transition from a centralized web2 model to a decentralized web3 paradigm is greatly simplified through the capabilities provided by Lit.
 
-## Programmable Key Pairs
+## Use Cases
 
-Each Programmable Key Pair (PKP) is a versatile multi-party computation wallet that can be utilized by developers to:
+Automation and interoperability to the dWeb with Lit Actions and PKPs.
 
-- Provide users of web3 with seamless, "seed-phraseless" onboarding experiences.
-- Facilitate transaction execution on blockchains, storage networks, and other state machines.
-- Build fully decentralized application backends.
+Below you will find some example projects and other potential ideas and use cases.
 
-### Mint via Contracts
+**DeFi Automation**
+
+Use PKPs and Actions to automate your interactions across decentralized finance.
+
+- Condition-based transactions (ex. on-chain limit orders).
+- Recurring payments.
+
+Example Projects:
+- [Sling Protocol](https://github.com/Sling-Protocol/pkp-dex-sdk): An SDK for automating transactions on popular DEXs. Currently supports Uniswap V3 and 1inch.
+
+**Infrastructure**
+
+Build powerful infrastructure that harnesses the power of Lit!
+
+- Cross-chain bridges.
+- Event listening and condition-based execution.
+- Privacy-preserving transactions.
+- Decentralized key custodians.
+
+Example Projects:
+- [Yacht Labs](https://yachtlabs.io/blog/yacht-lit-swap): Cross-chain atomic swaps with PKPs and Lit Actions
+- [Curve Labs](https://github.com/Curve-Labs/lit-privacy/tree/main): SDK for building privacy-preserving interactions on-chain
+
+**Web3 Social**
+
+Social applications that empower users with privacy and true data ownership.
+
+- Credentialing systems for privacy-preserving web3 login.
+- Account abstraction with support for web2 auth methods (i.e. Apple Passkey).
+- Verifiable, on-chain reputation building.
+
+Example Projects:
+
+- [Krebit](https://spark.litprotocol.com/krebitxlitactions/): Automated Verifiable Credential issuance.
+- [Wallet Abstraction demo](https://spark.litprotocol.com/wallet-abstraction-with-google-oauth/): Using Google oAuth to create a Lit MPC wallet.
+
+**Gaming**
+
+Improve the state of [web3 gaming](https://spark.litprotocol.com/lit-and-web3-gaming/).
+
+- Signing and wallet abstraction for blockchain-based games.
+- Condition-based reward systems and achievements.
+- Private data for multiplayer games.
+
+---
+
+## Mint a PKP 
+
+### via Contracts
 You'll need to get some [LIT testnet tokens](https://chronicle-faucet-app.vercel.app/) before you can mint a PKP on [Chronicle](https://explorer.litprotocol.com/mint-pkp) - Lit's custom EVM rollup testnet. This NFT represents the root ownership of the PKP. The NFT owner can grant additional parties (via a wallet address) or grant Lit Actions the ability to use the PKP to sign and decrypt data. They also have the ability to assign additional authentication methods.
 
-### Mint via Social
+### via Social
 You can mint a PKP by presenting a valid OAuth token as an authentication method to the Lit Relay server. Currently, only Google OAuth tokens are supported, but we plan to support Discord in the near term.
 
 Read more about this process [here](https://developer.litprotocol.com/pkp/wallets/examples).
@@ -140,59 +207,5 @@ const runLitAction = async () => {
 runLitAction();
 ```
 
-## Use Cases
-
-Automation and interoperability to the dWeb with Lit Actions and PKPs.
-
-Below you will find some example projects and other potential ideas and use cases.
-
-**DeFi Automation**
-
-Use PKPs and Actions to automate your interactions across decentralized finance.
-
-- Condition-based transactions (ex. on-chain limit orders).
-- Recurring payments.
-- Automated vault applications for seamlessly trading asset bundles.
-
-Example Projects:
-
-- [Sling Protocol](https://github.com/Sling-Protocol/pkp-dex-sdk): An SDK for automating transactions on popular DEXs. Currently supports Uniswap V3 and 1inch.
-- [Cask](https://www.cask.fi/): Automated, recurring payments.
-
-**Infrastructure**
-
-Build powerful infrastructure that harnesses the power of Lit!
-
-- Cross-chain bridges.
-- Oracles for off-chain data.
-- Event listening and condition-based execution.
-- Privacy-preserving transactions.
-- Decentralized key custodians.
-
-Example Projects:
-
-- [Yacht Labs](https://yachtlabs.io/blog/yacht-lit-swap): Cross-chain atomic swaps with PKPs and Lit Actions
-- [Curve Labs](https://github.com/Curve-Labs/lit-privacy/tree/main): SDK for building privacy-preserving interactions on-chain
-
-**Web3 Social**
-
-Social applications that empower users with privacy and true data ownership.
-
-- Credentialing systems for privacy-preserving web3 login.
-- User owned social graphs.
-- Account abstraction with support for web2 auth methods (i.e. Apple Passkey).
-- Verifiable, on-chain reputation building.
-
-Example Projects:
-
-- [Krebit](https://spark.litprotocol.com/krebitxlitactions/): Automated Verifiable Credential issuance.
-- [Wallet Abstraction demo](https://spark.litprotocol.com/wallet-abstraction-with-google-oauth/): Using Google oAuth to create a Lit MPC wallet.
-
-**Gaming**
-
-Improve the state of [web3 gaming](https://spark.litprotocol.com/lit-and-web3-gaming/).
-
-- Signing and wallet abstraction for blockchain-based games.
-- NPCs!
-- Condition-based reward systems and achievements.
-- Private data for multiplayer games.
+## Learn More
+Read the Lit developer docs on [Programmable Key Pairs](https://developer.litprotocol.com/pkp/intro) and [Lit Actions](https://developer.litprotocol.com/LitActions/intro).
