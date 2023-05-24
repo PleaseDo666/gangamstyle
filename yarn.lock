@@ -1690,9 +1690,9 @@
     siwe-recap "0.0.2-alpha.0"
     tslib "^2.3.0"
 
-"@lit-protocol/constants@^2.2.2":
+"@lit-protocol/constants@^2.2.10":
   version "2.2.10"
-  resolved "https://registry.npmjs.org/@lit-protocol/constants/-/constants-2.2.10.tgz"
+  resolved "https://registry.yarnpkg.com/@lit-protocol/constants/-/constants-2.2.10.tgz#32621a354d25883c30c5496dfa888b3d0d5c7c87"
   integrity sha512-zymzDUCzjoCHB58NXueu73Ksli9V2JPF+qID4uxbTwkNvyZZ4LgFHT7m+uo3vaxTcvY8h8X/8vOl/y1iOejmeQ==
   dependencies:
     "@lit-protocol/auth-helpers" "2.2.10"
