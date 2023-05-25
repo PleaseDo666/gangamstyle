@@ -16,16 +16,16 @@ At completion of this reading you should be able to:
 
 ---
 
-## Example Conditions
+With access control, you can introduce private and permissioned data to the open web using decentralized encryption. Use Lit to provision decryption "keys" to users based on on-chain conditions, such as ownership over a specific NFT or membership within a DAO.
 
+Some example conditions: 
 - User is a member of a DAO
 - User holds an NFT in a collection
 - User holds at least 0.1 ETH
 - The result of any smart contract function call
 - User owns a specific wallet address
-- Using boolean operations (AND + OR) for any of the above
 
-### Supported Logic
+## Supported Logic
 
 - Supports many EVM chains and Solana. Full list [here](https://developer.litprotocol.com/support/supportedChains).
 - Supports many standard contracts, with plans to support any RPC call soon. If you need to interact with a contract that we don't support yet, ask us, and we will implement it.
@@ -34,8 +34,6 @@ At completion of this reading you should be able to:
 - *Permanent conditions*: When a condition is stored as permanent, it becomes impossible to update it, forever.
 
 ## Use Cases
-
-With access control, you can introduce private and permissioned data to the open web using decentralized encryption. Use Lit to provision decryption "keys" to users based on on-chain conditions, such as ownership over a specific NFT or membership within a DAO.
 
 Some examples of applications that can (and have) been built harnessing this functionality:
 
@@ -60,7 +58,9 @@ Use on-chain credentials to gate access to your favorite web2 applications and d
 
 ---
 
-## Basic Example
+## Working with Access Control
+
+### Basic Example
 
 Restrict access based on the possession of an `ERC1155` token. In this example, the token contract's address is `0x3110c39b428221012934A7F617913b095BC1078C` and the token id we are checking for is `9541`.
 
@@ -84,5 +84,5 @@ const accessControlConditions = [
 ```
 
 
-## Learn More
+### Learn More
 Read the [Lit developer docs](https://developer.litprotocol.com/accessControl/intro#overview) on access control to learn more!

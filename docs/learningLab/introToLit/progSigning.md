@@ -109,8 +109,7 @@ Improve the state of [web3 gaming](https://spark.litprotocol.com/lit-and-web3-g
 ---
 
 ## Working with PKPs and Lit Actions
-In order to utilize PKPs and Lit Actions, you'll need to install the Lit JS SDK and get a PKP. 
-The PKP public key will be used in the Lit Action. 
+In the next few sections, we'll explain how to get a PKP and use that PKP's public key to sign as a result of a Lit Action call.
 
 ### Mint a PKP 
 
@@ -212,5 +211,7 @@ const runLitAction = async () => {
 runLitAction();
 ```
 
-## Learn More
+### Learn More
 Read the Lit developer docs on [Programmable Key Pairs](https://developer.litprotocol.com/pkp/intro) and [Lit Actions](https://developer.litprotocol.com/LitActions/intro).
+
+In order to utilize the Lit functions for PKPs and Lit Actions, you'll need to install the [Lit JS SDK](https://github.com/LIT-Protocol/js-sdk). 

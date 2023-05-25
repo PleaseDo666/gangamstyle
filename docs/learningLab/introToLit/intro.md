@@ -7,7 +7,16 @@ At its core, Lit is an attempt to decentralize [public key cryptography](https:
 
 Public key infrastructure (PKI) powers two main "buckets" of functionality: encryption and programmtic signing.
 
-### Encryption
+---
+
+## Objectives
+At completion of this reading you should be able to:
+
+- Explain at a high level what encryption and programmatic signing is.
+
+---
+
+## Encryption
 
 Encryption is the process of encoding information so that it remains hidden or inaccessible to unauthorized parties.
 
@@ -20,11 +29,11 @@ Lit's **decentralized access control** feature is interoperable with most EVM 
 - Authorize network signatures that provide access to content (for example, a server or network resource) behind an on-chain condition.
 - Request a network signed JWT that provisions access and authorization to content behind on-chain conditions.
 
-### Programmatic Signing
+## Programmatic Signing
 
-Lit can be used to program complex signing automations or provide seamless wallet onboarding experiences using Programmable Key Pairs (PKPs) and Lit Actions. PKPs are multi-party computation wallets generated and distributed across the Lit network, while Lit Actions are JavaScript functions dictating when, why, and what a PKP wallet will sign.
+Lit can be used to program complex signing automations and provide seamless wallet onboarding experiences using Programmable Key Pairs (PKPs) and Lit Actions. PKPs are multi-party computation wallets generated and distributed across the Lit network, while Lit Actions are JavaScript functions dictating when, why, and what a PKP wallet will sign.
 
-Much like in the physical world, digital signatures are used as "proof" that a particular interaction took place. For example, when you swap some tokens on a DEX you must first approve the transaction in your wallet via a signature. Unlike their physical counterparts, cryptographic signatures are tamper-proof and immutable, giving you a secure method of authentication.
+Much like in the physical world, digital signatures are used as "proof" that a particular interaction took place. For example, when you swap some tokens on a decentralized exchange (DEX) you must first approve the transaction in your wallet via a signature. Unlike their physical counterparts, cryptographic signatures are tamper-proof and immutable, giving you a secure method of authentication.
 
 What if a smart contract could have it's own public and private keypair, just like any other wallet? And what if that smart contract had the ability to make arbitrary HTTP requests and use off-chain data in its computation? Imagine smart contracts that can read and write from any HTTP endpoint, blockchain, state machine, or decentralized storage system.
 
