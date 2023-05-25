@@ -64,9 +64,20 @@ let authMethod = await session.authenticate({
 });
 const txHash = await session.fetchPKPThroughRelayer(authMethod);
 ```
-
 :::note 
 If the user is using a phone number, the country code must be provided.
+:::
+
+Below is an example of an authentication method from successful authentication
+```javascript
+{
+    "accessToken": "eyJhbGciOiJzZWNwMjU2azEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJMSVQtUHJvdG9jb2wiLCJzdWIiOiJMSVQtT1RQIiwiaWF0IjoxNjg0ODc1NTE0NDkxLCJleHAiOjE2ODQ4NzczMTQ0OTEsIm9yZ0lkIjoiTElUIiwicm9sZSI6InVzZXIiLCJleHRyYURhdGEiOiIrMTIwMTQwNzIwNzN8MjAyMy0wNS0yM1QyMDo1ODozNC40OTE3ODU5NDUrMDA6MDAifQ.eyJyIjoiZTA0ZDAyNjhjN2ExMzhiNmZiNDJjYTk4NmIxY2I4MWM0N2QyMTc0MzZlOWNlYzc4NGUzNWEyOTZkZmY2YjA4NSIsInMiOiI0NTE5MTVkMDY5YTZhZGE5M2U0OGY3ODUwMGM0MWUzNmMwYzQ4Y2FlODYwMmYxYWM0Njc0MTQ1YTNiMmMyNDU4In0",
+    "authMethodType": 7
+}
+```
+
+:::note 
+ Tokens expire after 30 minutes, and must be validated for session signature signing within that period
 :::
 
 
