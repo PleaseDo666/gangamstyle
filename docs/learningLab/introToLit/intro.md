@@ -5,23 +5,27 @@ sidebar_position: 1
 # 1. Intro
 At its core, Lit is an attempt to decentralize [public key cryptography](https://www.cloudflare.com/learning/ssl/how-does-public-key-encryption-work/). This technology underpins all of cryptocurrency and a majority of the security infrastructure on the web today. A decentralized key management network, Lit can be used in place of centralized key custodians and other key management solutions
 
-Public key infrastructure (PKI) powers two main "buckets" of functionality: encryption and signing.
+Public key infrastructure (PKI) powers two main "buckets" of functionality: encryption and programmtic signing.
 
-### **Encryption**
+### Encryption
 
 Encryption is the process of encoding information so that it remains hidden or inaccessible to unauthorized parties.
 
-Lit's first feature is a **decentralized access control** protocol interoperable with most EVM chains, Solana, and Cosmos. With Lit, you can use on-chain access control conditions to do 4 main things:
+Lit enables the client-side encryption and decryption of data by setting on or off-chain conditions, without relying on a centralized key custodian.
 
-- Encrypt and lock static content (images, videos, music, etc) behind an on-chain condition (for example, ownership of an NFT).
-- Decrypt static content that was locked behind an on-chain condition.
-- Authorize network signatures that provide access to dynamic content (for example, a server or network resource) behind an on-chain condition.
-- Request a network signed JWT that provisions access and authorization to dynamic content behind an on-chain condition.
+Lit's **decentralized access control** feature is interoperable with most EVM chains, Solana, and Cosmos. With it you can use on-chain access control conditions to do 4 main things:
 
-### **Signing**
+- Encrypt and lock content (images, videos, music, etc) behind an on-chain condition (for example, ownership of an NFT).
+- Decrypt content that was locked behind an on-chain condition.
+- Authorize network signatures that provide access to content (for example, a server or network resource) behind an on-chain condition.
+- Request a network signed JWT that provisions access and authorization to content behind on-chain conditions.
+
+### Programmatic Signing
+
+Lit can be used to program complex signing automations or provide seamless wallet onboarding experiences using Programmable Key Pairs (PKPs) and Lit Actions. PKPs are multi-party computation wallets generated and distributed across the Lit network, while Lit Actions are JavaScript functions dictating when, why, and what a PKP wallet will sign.
 
 Much like in the physical world, digital signatures are used as "proof" that a particular interaction took place. For example, when you swap some tokens on a DEX you must first approve the transaction in your wallet via a signature. Unlike their physical counterparts, cryptographic signatures are tamper-proof and immutable, giving you a secure method of authentication.
 
 What if a smart contract could have it's own public and private keypair, just like any other wallet? And what if that smart contract had the ability to make arbitrary HTTP requests and use off-chain data in its computation? Imagine smart contracts that can read and write from any HTTP endpoint, blockchain, state machine, or decentralized storage system.
 
-We have built this at Lit. We call the smart contracts *Lit Actions* and the keypairs they can use for signing and decryption *Programmable Key Pairs* (PKPs).
+The smart contracts that hold logic are the *Lit Actions* and the keypairs they can use for signing and decryption are *Programmable Key Pairs* (PKPs).

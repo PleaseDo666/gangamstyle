@@ -16,7 +16,7 @@ At completion of this reading you should be able to:
 
 ---
 
-## **Example Conditions**
+## Example Conditions
 
 - User is a member of a DAO
 - User holds an NFT in a collection
@@ -25,7 +25,7 @@ At completion of this reading you should be able to:
 - User owns a specific wallet address
 - Using boolean operations (AND + OR) for any of the above
 
-### **Supported Logic**
+### Supported Logic
 
 - Supports many EVM chains and Solana. Full list [here](https://developer.litprotocol.com/support/supportedChains).
 - Supports many standard contracts, with plans to support any RPC call soon. If you need to interact with a contract that we don't support yet, ask us, and we will implement it.
@@ -60,9 +60,9 @@ Use on-chain credentials to gate access to your favorite web2 applications and d
 
 ---
 
-## **Basic Example**
+## Basic Example
 
-Restrict access based on the possession of an ERC1155 token. In this example, the token contract's address is 0x3110c39b428221012934A7F617913b095BC1078C and the token id we are checking for is 9541.
+Restrict access based on the possession of an `ERC1155` token. In this example, the token contract's address is `0x3110c39b428221012934A7F617913b095BC1078C` and the token id we are checking for is `9541`.
 
 ```js
 const accessControlConditions = [
@@ -82,8 +82,6 @@ const accessControlConditions = [
   }
 ]
 ```
-
-To learn more and get started as a developer in the Lit ecosystem, head on over to the [protocol documentation](https://developer.litprotocol.com/coreConcepts/accessControl/conditionTypes/unifiedAccessControlConditions).
 
 
 ## Learn More
